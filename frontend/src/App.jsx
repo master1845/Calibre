@@ -55,6 +55,7 @@ import Admin from './views/Admin.jsx'
 import CoachChat from './views/CoachChat.jsx'
 import Measurements from './views/Measurements.jsx'
 import CoachIntake from './views/CoachIntake.jsx'
+import CustomPlanning from './views/CustomPlanning.jsx'
 import CoachSetup from './views/CoachSetup.jsx'
 
 // last known scrollY per route, so back-navigation can put the page where it was
@@ -249,6 +250,7 @@ function Shell() {
           catch-all redirect below. */}
       {S.checkIn !== false && <Route path="/checkin" element={<CheckIn />} />}
       <Route path="/plan" element={<Plan />} />
+      <Route path="/custom-planning" element={<CustomPlanning />} />
       <Route path="/plan/r/:id" element={<RoutineEdit />} />
       <Route path="/workout" element={<Workout />} />
       <Route path="/stats" element={<Stats />} />
