@@ -38,3 +38,92 @@
 .custom-plan-footer span{font-size:11px;color:var(--muted,#888)}
 .custom-plan-footer button{flex:none}
 @media(max-width:560px){.custom-plan-page{padding:12px 12px 140px}.custom-plan-header{padding:22px 19px;border-radius:20px}.custom-plan-back{margin-bottom:20px}.custom-plan-section{padding:17px 14px;border-radius:17px}.custom-plan-muscles{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.custom-plan-muscle{padding:9px;gap:7px;font-size:12px}.custom-plan-fields{grid-template-columns:1fr}.custom-plan-footer{bottom:calc(58px + env(safe-area-inset-bottom,0px));width:calc(100% - 18px);padding:10px}.custom-plan-footer strong{max-width:150px}.custom-plan-footer button{font-size:12px}}
+
+/* Layout integration with the app shell and its design tokens. */
+.custom-plan-page {
+  display: block;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  max-width: 920px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  color: var(--label, inherit);
+}
+
+.custom-plan-page,
+.custom-plan-page *,
+.custom-plan-page *::before,
+.custom-plan-page *::after {
+  box-sizing: border-box;
+}
+
+.custom-plan-header,
+.custom-plan-section {
+  width: 100%;
+  min-width: 0;
+}
+
+.custom-plan-section {
+  color: var(--label, inherit);
+  border-color: var(--sep, #8884);
+  background: var(--surface, transparent);
+}
+
+.custom-plan-count,
+.custom-plan-hint,
+.custom-plan-footnote,
+.custom-plan-preview > p,
+.custom-plan-exercise span,
+.custom-plan-footer span {
+  color: var(--label-2, #888);
+}
+
+.custom-plan-muscle,
+.custom-plan-option {
+  border-color: var(--sep, #8884);
+}
+
+.custom-plan-muscle {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.custom-plan-muscle.is-selected,
+.custom-plan-option.is-selected {
+  border-color: var(--acc, var(--cp-accent));
+}
+
+.custom-plan-fields select {
+  color: var(--label, inherit);
+  background: var(--surface, #1c1c1e);
+  border-color: var(--sep, #8884);
+}
+
+.custom-plan-footer {
+  z-index: 60;
+  color: var(--label, inherit);
+  background: color-mix(in srgb, var(--bg-el, #0e0e10) 94%, transparent);
+  border-color: var(--sep, #8884);
+  bottom: calc(88px + var(--sab, 0px));
+}
+
+.custom-plan-footer button {
+  max-width: 100%;
+}
+
+@media (max-width: 560px) {
+  .custom-plan-page {
+    width: 100%;
+    padding: 12px 12px 150px;
+  }
+
+  .custom-plan-muscles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .custom-plan-footer {
+    bottom: calc(78px + var(--sab, 0px));
+    width: calc(100% - 24px);
+  }
+}
